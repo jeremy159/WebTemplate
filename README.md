@@ -1,6 +1,6 @@
 # WebTemplate
 
-Pour le côté cliet : Un template de plusieurs modules Angular qui peuvent être utilisée dans d'autres projets.
+Pour le côté client : Un template de plusieurs modules Angular qui peuvent être utilisée dans d'autres projets.
 Pour le côté serveur : Une template avec un socket de base pour permettre la communication entre le client et le serveur
 
 ## Getting Started
@@ -51,6 +51,8 @@ Pour contribuer au projet, il faut tout simplement faire une branche, effectuer 
 4. Maintenant que vous êtes sur master, écrivez `git merge *nomDeLaBranche*`.
 
 5. La branche master devrait alors contenir les modifications apportées à la branche *nomDeLaBranche*.
+
+6. Lorsque le merge s'est fait sans erreurs, supprimez la branche en écrivant `git branch -d *nomDeLaBranche*`.
 ```
 
 ## Versioning

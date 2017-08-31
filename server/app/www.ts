@@ -2,12 +2,12 @@
 /**
  * www.ts - Configure le serveur Node en vue d'accueillir l'application Express.
  *
- * @authors Nicolas Richard, Emilio Riviera
  * @date 2017/01/09
  */
 
 import { Application } from './app';
 import * as http from 'http';
+import { Socket } from './classes/socket';
 
 const application: Application = Application.bootstrap();
 
@@ -17,6 +17,8 @@ application.app.set('port', appPort);
 
 // Création du serveur HTTP.
 let server = http.createServer(application.app);
+//Initialisation de socket
+let socket = new Socket(server);
 
 /**
  *  Écoute du traffic sur le port configuré.
@@ -31,15 +33,19 @@ server.on('listening', onListening);
  * @param val Valeur du port d'écoute.
  * @returns Le port normalisé.
  */
-function normalizePort(val: number | string): number | string | boolean {
+function normalizePort(val: number | string): number | string | boolean
+{
     let port: number = (typeof val === 'string') ? parseInt(val, 10) : val;
-    if (isNaN(port)) {
+    if (isNaN(port))
+    {
         return val;
     }
-    else if (port >= 0) {
+    else if (port >= 0)
+    {
         return port;
     }
-    else {
+    else
+    {
         return false;
     }
 }
@@ -49,12 +55,15 @@ function normalizePort(val: number | string): number | string | boolean {
  *
  * @param error Erreur interceptée par le serveur.
  */
-function onError(error: NodeJS.ErrnoException): void {
-    if (error.syscall !== 'listen') {
+function onError(error: NodeJS.ErrnoException): void
+{
+    if (error.syscall !== 'listen')
+    {
         throw error;
     }
     let bind = (typeof appPort === 'string') ? 'Pipe ' + appPort : 'Port ' + appPort;
-    switch (error.code) {
+    switch (error.code)
+    {
         case 'EACCES':
             console.error(`${bind} requires elevated privileges`);
             process.exit(1);
@@ -71,7 +80,8 @@ function onError(error: NodeJS.ErrnoException): void {
 /**
  * Se produit lorsque le serveur se met à écouter sur le port.
  */
-function onListening(): void {
+function onListening(): void
+{
     let addr = server.address();
     let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
     console.log(`Listening on ${bind}`);

@@ -1,7 +1,6 @@
 /**
  * app.ts - Configures an Express application.
  *
- * @authors Nicolas Richard, Emilio Riviera
  * @date 2017/01/09
  */
 
@@ -13,8 +12,8 @@ import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import * as route from './routes';
 
-export class Application {
-
+export class Application
+{
     public app: express.Application;
 
     /**
@@ -25,7 +24,8 @@ export class Application {
      * @static
      * @return {ng.auto.IInjectorService} Returns the newly created injector for this this.app.
      */
-    public static bootstrap(): Application {
+    public static bootstrap(): Application
+    {
         return new Application();
     }
 
@@ -35,8 +35,8 @@ export class Application {
      * @class Server
      * @constructor
      */
-    constructor() {
-
+    constructor()
+    {
         // Application instantiation
         this.app = express();
 
@@ -53,7 +53,8 @@ export class Application {
      * @class Server
      * @method config
      */
-    private config() {
+    private config()
+    {
         // Middlewares configuration
         this.app.use(cors());
         this.app.use(logger('dev'));
@@ -69,7 +70,8 @@ export class Application {
      * @class Server
      * @method routes
      */
-    public routes() {
+    public routes()
+    {
         let router: express.Router;
         router = express.Router();
 
@@ -84,15 +86,18 @@ export class Application {
         this.app.use(router);
 
         // Gestion des erreurs
-        this.app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+        this.app.use((req: express.Request, res: express.Response, next: express.NextFunction) =>
+        {
             let err = new Error('Not Found');
             next(err);
         });
 
         // development error handler
         // will print stacktrace
-        if (this.app.get('env') === 'development') {
-            this.app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+        if (this.app.get('env') === 'development')
+        {
+            this.app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) =>
+            {
                 res.status(err.status || 500);
                 res.send({
                     message: err.message,
@@ -103,7 +108,8 @@ export class Application {
 
         // production error handler
         // no stacktraces leaked to user (in production env only)
-        this.app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+        this.app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) =>
+        {
             res.status(err.status || 500);
             res.send({
                 message: err.message,

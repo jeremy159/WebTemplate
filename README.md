@@ -42,17 +42,15 @@ Il faut écrire la commande `npm start` pour démarrer chaque côté du template
 Pour contribuer au projet, il faut tout simplement faire une branche, effectuer les modifications voulues et merger avec le master lorsque tout semble fonctionnel. C'est donc un *pull request* :
 
 ```
-1. À la racine du projet, écrivez `git checkout -b nomDeLaBranche`. Cela va créer une nouvelle branche et vous mettre dessus.
+1. À la racine du projet, écrivez `git checkout -b *nomDeLaBranche*`. Cela va créer une nouvelle branche et vous mettre dessus.
 
 2. Faîtes des commits sur cette branche.
 
-3. Une fois les modification terminée, Cliquez sur **New pull request**.
+3. Une fois les modification terminée et toutes commitées, écrivez `git checkout master` pour vous positionnez sur la branche avec laquelle vous voulez merger.
 
-4. Ajoutez un titre et une description de la *pull request*.
+4. Maintenant que vous êtes sur master, écrivez `git merge *nomDeLaBranche*`.
 
-5. Cliquez ensuite sur **Create pull request**.
-
-6. Ensuite, mergez la branche avec le master lorsque la *pull request* a été approuvée.
+5. La branche master devrait alors contenir les modifications apportées à la branche *nomDeLaBranche*.
 ```
 
 ## Versioning

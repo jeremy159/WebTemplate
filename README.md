@@ -1,6 +1,6 @@
 # WebTemplate
 
-Pour le côté client : Un template de plusieurs modules Angular qui peuvent être utilisée dans d'autres projets.
+Pour le côté client : Un template de plusieurs modules Angular qui peuvent être utilisée dans d'autres projets.  
 Pour le côté serveur : Une template avec un socket de base pour permettre la communication entre le client et le serveur
 
 ## Getting Started
@@ -41,19 +41,17 @@ Il faut écrire la commande `npm start` pour démarrer chaque côté du template
 
 Pour contribuer au projet, il faut tout simplement faire une branche, effectuer les modifications voulues et merger avec le master lorsque tout semble fonctionnel. C'est donc un *pull request* :
 
-```
-1. À la racine du projet, écrivez `git checkout -b *nomDeLaBranche*`. Cela va créer une nouvelle branche et vous mettre dessus.
+1. À la racine du projet, écrivez `git checkout -b nomDeLaBranche`. Cela va créer une nouvelle branche et vous mettre dessus.
 
 2. Faîtes des commits sur cette branche.
 
 3. Une fois les modification terminée et toutes commitées, écrivez `git checkout master` pour vous positionnez sur la branche avec laquelle vous voulez merger.
 
-4. Maintenant que vous êtes sur master, écrivez `git merge *nomDeLaBranche*`.
+4. Maintenant que vous êtes sur master, écrivez `git merge nomDeLaBranche`.
 
 5. La branche master devrait alors contenir les modifications apportées à la branche *nomDeLaBranche*.
 
-6. Lorsque le merge s'est fait sans erreurs, supprimez la branche en écrivant `git branch -d *nomDeLaBranche*`.
-```
+6. Lorsque le merge s'est fait sans erreurs, supprimez la branche en écrivant `git branch -d nomDeLaBranche`.
 
 ## Versioning
 

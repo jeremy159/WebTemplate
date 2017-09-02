@@ -13,7 +13,6 @@ export class ServiceExample
     constructor()
     {
         console.log("Service example OK !")
-        new SingletonSocketClient();
         this.initializeExampleServices();
     }
 

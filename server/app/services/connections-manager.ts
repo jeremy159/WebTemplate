@@ -31,7 +31,7 @@ export class ConnectionManager
             {
                 connections[i] = connections[connections.length - 1];
                 connections.pop();
-                console.log("Socket '" + socket.id + "' has deconnected and has been removed from the list of connected socket")
+                console.log("Socket '" + socket.id + "' has deconnected and has been removed from the list of connected socket.\n")
             }
         }
     }

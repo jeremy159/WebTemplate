@@ -8,8 +8,10 @@ import * as io from 'socket.io-client';
 
 export class SingletonSocketClient
 {
-    private static uniqueInstance : io.SocketIOClient.Socket = undefined;
+    //Add the URL to communicate with
     private readonly URL = "http://localhost:3002/";
+    private static uniqueInstance : io.SocketIOClient.Socket = undefined;
+   
     constructor()
     {
         //We maintain only one socket open by checking if it is already connected

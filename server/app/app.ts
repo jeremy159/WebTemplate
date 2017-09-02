@@ -39,10 +39,8 @@ export class Application
     {
         // Application instantiation
         this.app = express();
-
         //configure this.application
         this.config();
-
         //configure routes
         this.routes();
     }

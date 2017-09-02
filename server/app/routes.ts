@@ -1,14 +1,14 @@
 import * as express from 'express';
-import { ServeurService } from './serveur.service';
 
-const serveurService = new ServeurService();
-
-/*Classe contenant tous les routes relatives au Serveur*/
 export class Route
 {
-    public init(router: express.Router)
-    {
-        //home page
-        router.get('/', serveurService.index.bind(serveurService.index));
-    }
+  public myHomeFct(req : express.Request, res: express.Response, next: express.NextFunction)
+  {
+    res.send(JSON.stringify('Bienvenue!'));
+  }
+  public init(router : express.Router)
+  {
+    //home page
+    router.get('/', this.myHomeFct.bind(this.myHomeFct));
+  }
 }

@@ -7,7 +7,7 @@
 
 import { Application } from './app';
 import * as http from 'http';
-import { Socket } from './classes/socket';
+import { SingletonSocketServer } from './services/socket-server';
 
 const application: Application = Application.bootstrap();
 
@@ -18,7 +18,7 @@ application.app.set('port', appPort);
 // Création du serveur HTTP.
 let server = http.createServer(application.app);
 //Initialisation de socket
-let socket = new Socket(server);
+new SingletonSocketServer(server);
 
 /**
  *  Écoute du traffic sur le port configuré.

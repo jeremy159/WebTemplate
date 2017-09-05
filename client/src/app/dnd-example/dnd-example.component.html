@@ -1,0 +1,7 @@
+<div myDrop (myDrop)="onDrop($event)" class="container">
+    <div>
+        <div *ngFor="let box of boxes;" [id]="box.id" [style.backgroundColor]="box.color" class="dimensions" myDrag>
+            {{ box.id }}
+        </div>
+    </div>
+</div>

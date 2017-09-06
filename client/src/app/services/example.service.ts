@@ -10,15 +10,28 @@ import { SingletonSocketClient } from './socket-client'
 @Injectable()
 export class ServiceExample
 {
+    // Add data variable here
+
+    private static isInitialized : boolean = false;
     constructor()
     {
-        console.log("Service example OK !")
-        this.initializeExampleServices();
+        if(!ServiceExample.isInitialized)
+        {
+             this.initializeExampleServices();
+             ServiceExample.isInitialized = true;
+        }
+       
     }
 
     public initializeExampleServices() : void
     {
-        SingletonSocketClient.instance().emit('example_event', "Hello");
+        let socket = SingletonSocketClient.instance();
+        socket.emit('example_event', "Hello server");
     }
+
+    // Create functions to retrieve data locally (these, updated by the server-side socket with 
+    // the 'emit' function and the client-side socket with 'on' function)
+
+    // create functions to update data in the database
 
 }

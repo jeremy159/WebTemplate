@@ -2,7 +2,7 @@
 * Socket is set as a Signleton pattern. It ensure that every services will read and write to the same socket connection.
 * Just add the class to the services to use and add the proper 'emit' and 'on' function to read/write to the socket.
 *
-* WARNING : THIS CLASS SHOULD NOT BE MODIFIED !!
+* WARNING : THIS CLASS SHOULD NOT BE MODIFIED EXCEPT FOR THE URL!!
 */
 import * as io from 'socket.io-client';
 
@@ -24,6 +24,5 @@ export class SingletonSocketClient
     public static instance() : io.SocketIOClient.Socket
     {
         return this.uniqueInstance;
-    }
-    
+    }    
 }

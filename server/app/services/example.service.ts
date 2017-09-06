@@ -4,6 +4,9 @@ export class ExampleService
 {
     constructor(socket : SocketIO.Socket)
     {
-        socket.on('example_event', (data : string) => { console.log("Socket ID " + socket.id + " is telling us : " + data); });
+        socket.on('example_event', (data : string) => 
+        {
+             console.log("Socket ID " + socket.id + " is telling us : " + data); 
+        });
     }
 }

@@ -23,9 +23,9 @@ export class SingletonSocketServer
     }
   
     //Return the server-side sockey unique instance
-    /*public static instance() : SocketIO.Server
+    public static instance() : SocketIO.Server
     {
         return this.uniqueInstance;
-    }*/
+    }
   
 }
